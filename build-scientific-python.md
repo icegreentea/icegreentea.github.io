@@ -23,12 +23,15 @@ Our new approach:
     * [x] Python (may as well go to 3.6/3.7)
     * [x] BLAS (OpenBLAS)
     * [x] LAPACK
-    * [ ] numpy
-    * [ ] scipy
+    * [x] numpy (btw, this needs like ~90 MiB of free space for the src/build directory)
+        * Ran into a fun problem where we failed a bunch of numpy tests since our image doesn't come with `ldd`... we'll get that fixed
+    * [ ] scipy (btw, this needs like ~300+ MiB of free space for the src/build directory)
     
  Resources that I'm leveraging heavily here:
  
  * https://stackoverflow.com/questions/7496547/does-python-scipy-need-blas
+ 
+ Oh also, if you just following that source's instructions, you'll build static libraries for blas/lapack and statically link them into numpy and scipy. For our application, I think that's ok... but take that into consideration. 
  
  Eventually I would like to talk about:
  
